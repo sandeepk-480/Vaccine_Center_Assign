@@ -18,4 +18,4 @@
 1- git clone https://github.com/sandeepk-480/Vaccine_Center_Assign.git<br>
 2- cd Vaccine_Center_Assign<br>
 3- pip install -r req.txt<br>
-4- python manage.py runserver.<br>
+4- python manage.py runserver<br>
