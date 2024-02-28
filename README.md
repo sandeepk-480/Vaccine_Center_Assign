@@ -14,6 +14,7 @@
 
 - Open any of your code editor, like vs code or pycharm.<br>
 - open Terminaland run this commands-<br>
+- Create a seperate Virtual environment (Not must but recommended). <br>
 1- git clone https://github.com/sandeepk-480/Vaccine_Center_Assign.git<br>
 2- cd Vaccine_Center_Assign<br>
 3- pip install req.txt<br>
