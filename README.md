@@ -21,5 +21,5 @@
 4- python manage.py runserver<br>
 
 <h4>Super User Login (All Permissions)</h4>
-<span>Username: admin</span>
+<span>Username: admin</span> <br>
 <span>Password: admin</span>
