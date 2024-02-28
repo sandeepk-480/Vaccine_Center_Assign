@@ -19,3 +19,7 @@
 2- cd Vaccine_Center_Assign<br>
 3- pip install -r req.txt<br>
 4- python manage.py runserver<br>
+
+<h4>Super User Login</h4>
+<p>Username: admin</p>
+<p>Password: admin</p>
