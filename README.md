@@ -20,6 +20,6 @@
 3- pip install -r req.txt<br>
 4- python manage.py runserver<br>
 
-<h4>Super User Login</h4>
-<p>Username: admin</p>
-<p>Password: admin</p>
+<h4>Super User Login (All Permissions)</h4>
+<span>Username: admin</span>
+<span>Password: admin</span>
