@@ -1,0 +1,66 @@
+{% extends "app/base.html" %}
+{% load static %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'css/home.css' %}">{% endblock %}
+
+{% block title %}Home{% endblock  %}
+
+{% block body %}
+
+{% comment %} For messages {% endcomment %}
+<div class="message-js">
+  {% if messages %}
+      {% for message in messages %}
+          <span class="{{message.tags}}">{{message}}</span>
+      {% endfor %}
+  {% endif %}
+</div>
+
+{% comment %} Header {% endcomment %}
+<div class="center-text mt-4">
+  <h2 class="text-center text-light">Vaccine Centers List-</h2>
+  <h4 class="text-center text-light userName"><u>Welcome {{user}}</u></h4>
+</div>
+
+{% comment %} Main Content {% endcomment %}
+<div class="container">
+  <table class='Vaccinetable'>
+      <thead>
+          <tr>
+              <th>Sr.No.</th>
+              <th>Name</th>
+              {% if perms.app.view_dosagedetail %}
+                <th>Dose Name</th>
+              {% endif %}
+              <th>Address</th>
+              <th>Working hours</th>
+              <th>Book a Slot</th>
+          </tr>
+      </thead>
+      <tbody>
+        {% for i in vacc %} 
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.name}}</td>
+            {% if perms.app.view_dosagedetail %}
+              <td>
+                {% for dose in i.dosagedetail_set.all %}
+                  {{dose.vaccine_name}}
+                {% endfor %}
+              </td>
+            {% endif %}
+            <td>{{i.address}}</td>
+            <td>{{i.working_hours}}</td>
+              <td class="buttonn">                          
+                <a href='/book/{{i.id}}' type="button" class="book_btn" id="book-js">Book</a>
+                {% if perms.app.delete_vaccinationcenter %}
+                  <a href='/delete/{{i.id}}' type="button" class="delete_btn" id="delete-js" >Delete</a>
+                {% endif %}
+              </td>
+          </tr>                  
+        {% endfor %}
+      </tbody>
+  </table>
+</div>
+
+{% endblock %}
